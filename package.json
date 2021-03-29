@@ -10,8 +10,10 @@
     "server": "json-server --watch db.json --port 3001",
     "client": "webpack serve",
     "lint:js": "eslint .",
-    "lint:css":"stylelint './src/**/*.js'",
-    "test": "jest"
+    "lint:css": "stylelint './src/**/*.js'",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "isomorphic-fetch": "^3.0.0",
@@ -28,6 +30,10 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@babel/runtime": "^7.12.5",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/react": "^6.1.21",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
