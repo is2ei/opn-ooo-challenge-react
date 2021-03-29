@@ -33,6 +33,12 @@ $ yarn client
 
 Finally, you can access to the app via http://localhost:3000/ :tada:
 
+## Running lint
+
+```
+$ yarn lint:js
+```
+
 ## Running tests
 
 ```
