@@ -1,6 +1,8 @@
 opn-ooo-challenge-react
 ===
 
+[![Node.js CI](https://github.com/is2ei/opn-ooo-challenge-react/actions/workflows/node.js.yml/badge.svg)](https://github.com/is2ei/opn-ooo-challenge-react/actions/workflows/node.js.yml)
+
 Test Omise code challenge for frontend developer
 
 ## Getting Started
