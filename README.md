@@ -35,8 +35,16 @@ Finally, you can access to the app via http://localhost:3000/ :tada:
 
 ## Running lint
 
+For JS
+
 ```
 $ yarn lint:js
+```
+
+For CSS
+
+```
+$ yarn lint:css
 ```
 
 ## Running tests

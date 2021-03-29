@@ -10,6 +10,7 @@
     "server": "json-server --watch db.json --port 3001",
     "client": "webpack serve",
     "lint:js": "eslint .",
+    "lint:css":"stylelint './src/**/*.js'",
     "test": "jest"
   },
   "dependencies": {
@@ -35,6 +36,10 @@
     "html-webpack-plugin": "^4.5.1",
     "jest": "^26.6.3",
     "json-server": "^0.16.3",
+    "stylelint": "^13.12.0",
+    "stylelint-config-recommended": "^4.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "webpack": "^5.14.0",
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.2"
