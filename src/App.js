@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+
+import { GlobalStyle } from './globalStyle';
 import { summaryDonations } from './helpers';
 
 const Card = styled.div`
@@ -85,6 +87,7 @@ export default connect((state) => state)(
 
       return (
         <div>
+          <GlobalStyle />
           <h1>Tamboon React</h1>
           <p>All donations: {donate}</p>
           <p style={style}>{message}</p>
@@ -97,11 +100,11 @@ export default connect((state) => state)(
 
 /**
  * Handle pay button
- * 
+ *
  * @param {*} The charities Id
  * @param {*} amount The amount was selected
  * @param {*} currency The currency
- * 
+ *
  * @example
  * fetch('http://localhost:3001/payments', {
       method: 'POST',
