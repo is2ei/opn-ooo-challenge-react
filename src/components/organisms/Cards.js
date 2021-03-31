@@ -18,23 +18,16 @@ export class Cards extends Component {
   }
 
   render () {
-    const self = this;
     const { charities } = this.props;
     const cards = charities.map((item, i) => {
-
       return (
         <CardContainer key={i}>
           <Card
+            id={item.id}
+            currency={item.currency}
             name={item.name}
             image={`/images/${item.image}`}
-            onClickPayButton={
-              handlePay.call(
-                self,
-                item.id,
-               self.state.selectedAmount,
-                item.currency
-              )
-           }
+            onClickPayButton={handlePay}
          />
         </CardContainer>
       );
@@ -54,12 +47,10 @@ export class Cards extends Component {
  * @param {*} The charities Id
  * @param {*} amount The amount was selected
  * @param {*} currency The currency
- *
- * @example
- * fetch('http://localhost:3001/payments', {
-      method: 'POST',
-      body: `{ "charitiesId": ${id}, "amount": ${amount}, "currency": "${currency}" }`,
-    })
  */
-function handlePay(id, amount, currency) {}
-
+function handlePay(id, amount, currency) {
+  fetch('http://localhost:3001/payments', {
+    method: 'POST',
+    body: `{ "charitiesId": ${id}, "amount": ${amount}, "currency": ${currency}" }`,
+  })
+}

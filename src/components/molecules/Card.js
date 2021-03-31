@@ -92,7 +92,7 @@ export class Card extends Component {
 
   render() {
     const self = this;
-    const { name, image, onClickPayButton } = this.props;
+    const { id, currency, name, image, onClickPayButton } = this.props;
 
     const payments = [10, 20, 50, 100, 500].map((amount, j) => (
       <label key={j}>
@@ -136,7 +136,10 @@ export class Card extends Component {
               <PaymentButtonContainer>
                 <Button
                   label={'Pay'}
-                  onClickHandler={onClickPayButton}
+                  onClickHandler={() => {
+                    onClickPayButton(id, this.state.selectedAmount, currency)
+                    self.setState({ isPaymentFormVisible: false })
+                  }}
                 />
               </PaymentButtonContainer>
             </PaymentFormContainer>
