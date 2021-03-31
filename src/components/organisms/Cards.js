@@ -23,9 +23,8 @@ export class Cards extends Component {
     const cards = charities.map((item, i) => {
 
       return (
-        <CardContainer>
+        <CardContainer key={i}>
           <Card
-            key={i}
             name={item.name}
             image={`/images/${item.image}`}
             onClickPayButton={

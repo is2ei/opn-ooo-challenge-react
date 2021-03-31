@@ -7,12 +7,8 @@ import { GlobalStyle } from './globalStyle';
 import { summaryDonations } from './helpers';
 
 import {
-  Header,
-} from './components/atoms';
-
-import {
-  Cards,
-} from './components/organisms';
+  Donation,
+} from './components/pages';
 
 export default connect((state) => state)(
   class App extends Component {
@@ -43,16 +39,7 @@ export default connect((state) => state)(
     }
 
     render() {
-      const style = {
-        color: 'red',
-        margin: '1em 0',
-        fontWeight: 'bold',
-        fontSize: '16px',
-        textAlign: 'center',
-      };
-
-      const donate = this.props.donate;
-      const message = this.props.message;
+      const { donate, message } = this.props;
 
       return (
         <IntlProvider
@@ -61,10 +48,9 @@ export default connect((state) => state)(
           messages={this.props.messages}
         >
           <GlobalStyle />
-          <Header />
-          <p>All donations: {donate}</p>
-          <p style={style}>{message}</p>
-          <Cards
+          <Donation
+            donate={donate}
+            message={message}
             charities={this.state.charities}
           />
         </IntlProvider>
