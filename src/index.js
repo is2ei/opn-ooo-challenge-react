@@ -2,7 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+
 import App from './App';
+import messages from '../lang/en-US.json'
 
 const store = createStore(function (state, action) {
   const _state =
@@ -30,7 +32,7 @@ const store = createStore(function (state, action) {
 
 render(
   <Provider store={store}>
-    <App />
+    <App locale="en" messages={messages} />
   </Provider>,
   document.getElementById('root')
 );

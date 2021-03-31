@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { IntlProvider, FormattedMessage } from 'react-intl';
 import fetch from 'isomorphic-fetch';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
@@ -86,13 +87,17 @@ export default connect((state) => state)(
       const message = this.props.message;
 
       return (
-        <div>
+        <IntlProvider
+          locale={this.props.locale}
+          defaultLocale="en"
+          messages={this.props.messages}
+        >
           <GlobalStyle />
-          <h1>Tamboon React</h1>
+          <h1><FormattedMessage id="title"/></h1>
           <p>All donations: {donate}</p>
           <p style={style}>{message}</p>
           {cards}
-        </div>
+        </IntlProvider>
       );
     }
   }
