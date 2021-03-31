@@ -8,6 +8,7 @@ import { GlobalStyle } from './globalStyle';
 import { summaryDonations } from './helpers';
 
 import {
+  Button,
   Header,
 } from './components/atoms';
 
@@ -65,16 +66,15 @@ export default connect((state) => state)(
           <Card key={i}>
             <p>{item.name}</p>
             {payments}
-            <button
-              onClick={handlePay.call(
+            <Button
+              label={'Pay'}
+              onClickHandler={handlePay.call(
                 self,
                 item.id,
                 self.state.selectedAmount,
                 item.currency
               )}
-            >
-              Pay
-            </button>
+            />
           </Card>
         );
       });
