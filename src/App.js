@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { IntlProvider, FormattedMessage } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 import fetch from 'isomorphic-fetch';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import { GlobalStyle } from './globalStyle';
 import { summaryDonations } from './helpers';
+
+import {
+  Header,
+} from './components/atoms';
 
 const Card = styled.div`
   margin: 10px;
@@ -93,7 +97,7 @@ export default connect((state) => state)(
           messages={this.props.messages}
         >
           <GlobalStyle />
-          <h1><FormattedMessage id="title"/></h1>
+          <Header />
           <p>All donations: {donate}</p>
           <p style={style}>{message}</p>
           {cards}
