@@ -1,6 +1,8 @@
 import React from 'react';
+import { IntlProvider } from 'react-intl';
 
 import { GlobalStyle } from '../src/globalStyle'
+import messages from '../lang/en-US.json'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -8,9 +10,13 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <div>
+    <IntlProvider
+      locale="en"
+      defaultLocale="en"
+      messages={messages}
+    >
       <GlobalStyle />
       <Story />
-    </div>
+    </IntlProvider>
   )
 ]

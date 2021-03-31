@@ -1,9 +1,10 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
 export const Header = ({}) => (
   <header>
-    <Title>Omise Tamboon React</Title>
+    <Title><FormattedMessage id="title" /></Title>
   </header>
 )
 
