@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 import { IntlProvider } from 'react-intl';
 import fetch from 'isomorphic-fetch';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import { GlobalStyle } from './globalStyle';
 import { summaryDonations } from './helpers';
 
 import {
-  Button,
   Header,
 } from './components/atoms';
 
-const Card = styled.div`
-  margin: 10px;
-  border: 1px solid #ccc;
-`;
+import {
+  Cards,
+} from './components/organisms';
 
 export default connect((state) => state)(
   class App extends Component {
     state = {
       charities: [],
-      selectedAmount: 10,
     };
 
     componentDidMount() {
@@ -47,38 +43,6 @@ export default connect((state) => state)(
     }
 
     render() {
-      const self = this;
-      const cards = this.state.charities.map(function (item, i) {
-        const payments = [10, 20, 50, 100, 500].map((amount, j) => (
-          <label key={j}>
-            <input
-              type="radio"
-              name="payment"
-              onClick={function () {
-                self.setState({ selectedAmount: amount });
-              }}
-            />
-            {amount}
-          </label>
-        ));
-
-        return (
-          <Card key={i}>
-            <p>{item.name}</p>
-            {payments}
-            <Button
-              label={'Pay'}
-              onClickHandler={handlePay.call(
-                self,
-                item.id,
-                self.state.selectedAmount,
-                item.currency
-              )}
-            />
-          </Card>
-        );
-      });
-
       const style = {
         color: 'red',
         margin: '1em 0',
@@ -100,24 +64,11 @@ export default connect((state) => state)(
           <Header />
           <p>All donations: {donate}</p>
           <p style={style}>{message}</p>
-          {cards}
+          <Cards
+            charities={this.state.charities}
+          />
         </IntlProvider>
       );
     }
   }
 );
-
-/**
- * Handle pay button
- *
- * @param {*} The charities Id
- * @param {*} amount The amount was selected
- * @param {*} currency The currency
- *
- * @example
- * fetch('http://localhost:3001/payments', {
-      method: 'POST',
-      body: `{ "charitiesId": ${id}, "amount": ${amount}, "currency": "${currency}" }`,
-    })
- */
-function handlePay(id, amount, currency) {}

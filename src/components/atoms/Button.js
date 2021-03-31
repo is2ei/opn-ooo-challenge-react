@@ -8,6 +8,7 @@ const BaseButton = styled.button`
   border-style: solid;
   border-width: 1.5px;
   color: #5781f5;
+  cursor: pointer;
   height: 25px;
 `
 
@@ -17,7 +18,7 @@ export class Button extends Component {
 
     return (
       <BaseButton onClick={onClickHandler}>
-        { label }
+        {label}
       </BaseButton>
     )
   }
