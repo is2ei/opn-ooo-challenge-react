@@ -14,8 +14,7 @@ const Donations = styled.p`
 `
 
 const Message = styled.p`
-  color: red;
-  margin: 1em 0;
+  color: #f1948a;
   font-weight: bold;
   font-size: 16px;
   text-align: center;
