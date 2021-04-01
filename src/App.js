@@ -39,7 +39,7 @@ export default connect((state) => state)(
     }
 
     render() {
-      const { donate, message } = this.props;
+      const { donate, message, dispatch } = this.props;
 
       return (
         <IntlProvider
@@ -52,6 +52,12 @@ export default connect((state) => state)(
             donate={donate}
             message={message}
             charities={this.state.charities}
+            onPaymentHandler={(amount) => {
+              dispatch({
+                type: 'UPDATE_TOTAL_DONATE',
+                amount,
+              });
+            }}
           />
         </IntlProvider>
       );
