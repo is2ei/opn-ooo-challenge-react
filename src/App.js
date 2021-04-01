@@ -57,6 +57,10 @@ export default connect((state) => state)(
                 type: 'UPDATE_TOTAL_DONATE',
                 amount,
               });
+              dispatch({
+                type: 'UPDATE_MESSAGE',
+                message: 'Thanks!!',
+              });
             }}
           />
         </IntlProvider>
