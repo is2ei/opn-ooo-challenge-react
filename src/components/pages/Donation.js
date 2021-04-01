@@ -30,7 +30,7 @@ const CardsContainer = styled.div`
 export class Donation extends Component {
   render () {
 
-    const { donate, message, charities } = this.props;
+    const { donate, message, charities, onPaymentHandler } = this.props;
 
     return (
       <div>
@@ -40,6 +40,7 @@ export class Donation extends Component {
         <CardsContainer>
           <Cards
             charities={charities}
+            onPaymentHandler={onPaymentHandler}
           />
         </CardsContainer>
       </div>
