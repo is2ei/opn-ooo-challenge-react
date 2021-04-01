@@ -102,7 +102,7 @@ export class Card extends Component {
           onClick={() => {
             self.setState({ selectedAmount: amount })
           }}
-          checked={amount === this.state.selectedAmount}
+          defaultChecked={amount === 10}
         />
         {amount}
       </label>
