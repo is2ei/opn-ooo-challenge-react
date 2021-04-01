@@ -9,12 +9,22 @@ import {
   Cards,
 } from '../organisms';
 
+const Donations = styled.p`
+  text-align: center;
+`
+
 const Message = styled.p`
   color: red;
   margin: 1em 0;
   font-weight: bold;
   font-size: 16px;
   text-align: center;
+`
+
+const CardsContainer = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  width: 1124px;
 `
 
 export class Donation extends Component {
@@ -25,11 +35,13 @@ export class Donation extends Component {
     return (
       <div>
         <Header />
-        <p>All donations: {donate}</p>
+        <Donations>All donations: {donate}</Donations>
         <Message>{message}</Message>
-        <Cards
-          charities={charities}
-        />
+        <CardsContainer>
+          <Cards
+            charities={charities}
+          />
+        </CardsContainer>
       </div>
     )
   }

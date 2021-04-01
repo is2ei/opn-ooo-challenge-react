@@ -15,4 +15,5 @@ Header.defaultProps = ({})
 const Title = styled.h1`
   color: #636A79;
   font-weight: 900;
+  text-align: center;
 `
